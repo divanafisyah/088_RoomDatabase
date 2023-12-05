@@ -26,8 +26,14 @@ import com.example.pam10.model.DetailSiswa
 import com.example.pam10.model.EntryViewModel
 import com.example.pam10.model.PenyediaViewModel
 import com.example.pam10.model.UIStateSiswa
+import com.example.pam10.navigasi.DestinasiNavigasi
+import com.example.pam10.navigasi.SiswaTopAppBar
 import kotlinx.coroutines.launch
 
+object DestinasiEntry: DestinasiNavigasi {
+    override val route = "item_entry"
+    override val titleRes = R.string.entry_siswa
+}
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EntrySiswaScreen(
@@ -41,7 +47,7 @@ fun EntrySiswaScreen(
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            SiswaTopBar(
+            SiswaTopAppBar(
                 title = stringResource(DestinasiEntry.titleRes),
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior
